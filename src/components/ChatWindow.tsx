@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import CopyButton from './CopyButton';
 import { Message, Role, Agent } from '../../types';
 
 interface ChatWindowProps {
@@ -67,13 +68,20 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, isLoading, generation
                                 ))}
                             </div>
                         ) : (
-                            <div className="prose prose-invert max-w-none">
-                                <ReactMarkdown
-                                    remarkPlugins={[remarkGfm]}
-                                    rehypePlugins={[rehypeHighlight]}
-                                >
-                                    {message.content}
-                                </ReactMarkdown>
+                            <div className="relative group">
+                                <div className="prose prose-invert max-w-none">
+                                    <ReactMarkdown
+                                        remarkPlugins={[remarkGfm]}
+                                        rehypePlugins={[rehypeHighlight]}
+                                    >
+                                        {message.content}
+                                    </ReactMarkdown>
+                                </div>
+                                {message.role !== Role.USER && message.content && (
+                                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <CopyButton text={message.content} />
+                                    </div>
+                                )}
                             </div>
                         )}
                     </div>

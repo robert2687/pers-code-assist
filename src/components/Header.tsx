@@ -1,13 +1,15 @@
 import React from 'react';
+import ExportButton from './ExportButton';
 import { Agent } from '../../types';
 
 interface HeaderProps {
     onToggleSidebar: () => void;
     activeAgent: Agent;
     onAgentChange: (agent: Agent) => void;
+    activeSession?: any;
 }
 
-const Header: React.FC<HeaderProps> = ({ onToggleSidebar, activeAgent, onAgentChange }) => {
+const Header: React.FC<HeaderProps> = ({ onToggleSidebar, activeAgent, onAgentChange, activeSession }) => {
     return (
         <header className="bg-slate-800 border-b border-slate-700 p-4 flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -24,6 +26,9 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar, activeAgent, onAgentCh
             </div>
             
             <div className="flex items-center space-x-2">
+                {activeSession && (
+                    <ExportButton session={activeSession} agent={activeAgent} />
+                )}
                 <label htmlFor="agent-select" className="text-sm text-slate-300">Agent:</label>
                 <select
                     id="agent-select"

@@ -330,6 +330,7 @@ const App: React.FC = () => {
                     onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
                     activeAgent={activeAgent} 
                     onAgentChange={setActiveAgent} 
+                    activeSession={activeSession}
                 />
                 {error && !activeSession?.messages.some(m => m.role === Role.ERROR) && <ErrorDisplay message={error} />}
                 <ChatWindow 
