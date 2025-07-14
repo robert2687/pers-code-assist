@@ -1,0 +1,83 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}
+
+/* Override prose styles for code blocks */
+.prose pre {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure proper text contrast in all states */
+.prose {
+  color: #f1f5f9; /* slate-100 */
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: #f8fafc; /* slate-50 */
+}
+
+.prose code {
+  color: #fbbf24; /* amber-400 */
+  background-color: #374151; /* gray-700 */
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left-color: #6366f1; /* indigo-500 */
+  color: #cbd5e1; /* slate-300 */
+}
+
+.prose a {
+  color: #60a5fa; /* blue-400 */
+}
+
+.prose a:hover {
+  color: #93c5fd; /* blue-300 */
+}
+
+.prose strong {
+  color: #f8fafc; /* slate-50 */
+}
+
+.prose ul, .prose ol {
+  color: #f1f5f9; /* slate-100 */
+}
+
+.prose table {
+  color: #f1f5f9; /* slate-100 */
+}
+
+.prose th {
+  color: #f8fafc; /* slate-50 */
+  background-color: #374151; /* gray-700 */
+}
+
+.prose td {
+  border-color: #4b5563; /* gray-600 */
+}
+
+.prose hr {
+  border-color: #4b5563; /* gray-600 */
+}
