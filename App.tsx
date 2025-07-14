@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { GoogleGenAI } from '@google/genai';
 import { Message, Role, Agent, ChatSession } from './types';
-import Header from './components/Header';
-import ChatWindow from './components/ChatWindow';
-import UserInput from './components/UserInput';
-import ErrorDisplay from './components/ErrorDisplay';
-import HistorySidebar from './components/HistorySidebar';
+import Header from './src/components/Header';
+import ChatWindow from './src/components/ChatWindow';
+import UserInput from './src/components/UserInput';
+import ErrorDisplay from './src/components/ErrorDisplay';
+import HistorySidebar from './src/components/HistorySidebar';
 
 const agentSystemInstructions: Record<Agent, string> = {
     [Agent.Default]: 'You are a helpful and friendly AI assistant named Gemini. Format your responses clearly, using markdown where appropriate.',
